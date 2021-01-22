@@ -5,10 +5,11 @@ import "./App.css";
 function App() {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
+  const [addedName, setAddedName] = useState("");
   const handleSubmit = async (data) => {
     return axios
       .post(`https://data-server-app.herokuapp.com/add`, data)
-      .then((res) => res.data)
+      .then((res) => setAddedName(res.data.name))
       .catch((err) => {
         console.log(err);
         return Promise.reject(err);
@@ -41,6 +42,7 @@ function App() {
       >
         submit
       </button>
+      {addedName !== "" && <h3>Your Submitted Name is : {addedName}</h3>}
     </div>
   );
 }
