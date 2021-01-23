@@ -22,6 +22,7 @@ function App() {
         className="input"
         type="text"
         name="name"
+        placeholder="Enter Name"
         onChange={(e) => setName(e.target.value)}
       />
       <br />
@@ -30,6 +31,7 @@ function App() {
         name="address"
         rows="4"
         onChange={(e) => setAddress(e.target.value)}
+        placeholder="Enter Address"
         cols="22"
       />
       <br />
